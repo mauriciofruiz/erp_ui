@@ -1,0 +1,1 @@
+export { ManageCategoriaClientesPage } from './ManageCategoriaClientesPage';

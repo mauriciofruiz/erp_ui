@@ -1,0 +1,1 @@
+export { PeriodoContablePage } from './PeriodoContablePage';

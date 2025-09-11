@@ -1,0 +1,1 @@
+export { ManageCuentasBancariasPage } from './ManageCuentasBancariasPage';

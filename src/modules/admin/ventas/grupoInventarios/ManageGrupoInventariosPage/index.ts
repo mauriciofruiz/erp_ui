@@ -1,0 +1,1 @@
+export { ManageGrupoInventariosPage } from './ManageGrupoInventariosPage';

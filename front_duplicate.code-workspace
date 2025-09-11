@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "front",
+			"path": "."
+		}
+	],
+	"settings": {
+		"exportall.config.folderListener": [
+			"/src/types/common"
+		],
+		"exportall.config.relExclusion": [
+			"/src/modules/importaciones/comprasexterior/distribucion/pages/ordencompra/HeaderButtonsOCExt.tsx",
+			"/src/modules/importaciones/comprasexterior/distribucion/pages/ordencompra/FooterOrdenExterior.tsx",
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion/SubmitButtons.tsx",
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion/SubmitFunctions.ts",
+			"/src/modules/adquisiciones/facturacion/page/ColumnDefinition.tsx",
+			"/src/modules/adquisiciones/facturacion/page/DialogoBusqueda.tsx",
+			"/src/modules/adquisiciones/facturacion/page/FacturaProveedorPaginacion.tsx",
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion/index.ts"
+		]
+	}
+}

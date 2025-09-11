@@ -1,0 +1,1 @@
+export { NotaCreditoPage } from './NotaCreditoPage';

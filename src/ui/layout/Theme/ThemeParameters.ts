@@ -1,0 +1,12 @@
+export const primaryColor = '#92C83E';
+export const primaryColorCompras = '#F86D9D';
+export const primaryColorContabilidad = '#5FCBF1';
+export const primaryColorTalento = '#F3AA5D';
+export const primaryColorImportaciones = '#FFA300';
+export const primaryColorVentas = '#FFA300';
+export const primaryColorManufactura = '#C1A06B';
+export const contrastText = '#fff';
+export const secondaryColor = '#58595B';
+export const tertearyColor = '#4f5052';
+export const backgroundColor = '#696969';
+export const cardColor = 'rgba(122, 123, 125, 0.7)';

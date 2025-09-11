@@ -1,0 +1,134 @@
+import { BitacoraType, CategoriaClientePvpType } from '../common';
+import { ProveedorProductoType } from '../proveedores';
+
+export type ProductoType = {
+  productId: number | null;
+  rotationProductId?: number | null;
+  subGroupId?: number | null;
+  taxRateId?: number | null;
+  measurementUnitId?: number | null;
+  productCode: string;
+  shortName: string;
+  largeName?: string;
+  costUnit?: number;
+  unitPrice?: number;
+  checkIva?: boolean;
+  characteristics?: string;
+  weight?: number;
+  width?: number;
+  large?: number;
+  thickness?: number;
+  brand?: string;
+  billPrice?: number;
+  rawMaterial?: boolean;
+  isService?: boolean;
+  file?: string;
+  registryDate?: Date | null;
+  modifyDate?: Date | null;
+  state?: boolean;
+  isProduction?: boolean;
+};
+
+export type ProductoByBodegaType = {
+  availableQuantity: number;
+  branchId: number | null;
+  branchName: string;
+  isService: boolean;
+  measurementUnitId: number;
+  productCode: string;
+  productId: number | null;
+  productName: string;
+  quantity: number;
+  weight: number;
+  unitPrice: number;
+  minimumQuantity: number;
+  maximumQuantity: number;
+  cdaQuantity: number;
+  existenceQuantity?: number;
+  taxRateId: number;
+  hasIva: boolean;
+};
+
+export type ProductMainDataType = {
+  productId: number | undefined | null;
+  productCode: string | undefined | null;
+  productName: string | undefined | null;
+  productGroup: string | undefined | null;
+  productSubGroup: string | undefined | null;
+  productRawMaterial: boolean | undefined | null;
+  productCostAccount: string | undefined | null;
+  productInventoryAccount: string | undefined | null;
+  productSaleAccount: string | undefined | null;
+  productCost: number | undefined | null;
+  productPvp: number | undefined | null;
+  warehouseList: ProductoByBodegaType[];
+};
+
+export type ProductDataType = {
+  productId: number | undefined | null;
+  productCode: string | undefined | null;
+  productName: string | undefined | null;
+  productLongName: string | undefined | null;
+  productMeasurementUnitId: number | undefined | null;
+  productRotationProductId: number | undefined | null;
+  productWidth: number | undefined | null;
+  productLarge: number | undefined | null;
+  productThickness: number | undefined | null;
+  productWeight: number | undefined | null;
+  productBrand: string | undefined | null;
+  productCaracteristics: string | undefined | null;
+  productGroupId: number | undefined | null;
+  productSubGroupId: number | undefined | null;
+  productCost: number | undefined | null;
+  productPvp: number | undefined | null;
+  productCheckIva: boolean | undefined | null;
+  productTotalQuantity: number | undefined | null;
+  productTotalExistQuantity: number | undefined | null;
+  productKardexQuantity: number | undefined | null;
+  productPurchaseQuantity: number | undefined | null;
+  productSaleQuantity: number | undefined | null;
+  productCostAccountId: number | undefined | null;
+  productCostAccount: string | undefined | null;
+  productInventoryAccountId: number | undefined | null;
+  productInventoryAccount: string | undefined | null;
+  productSaleAccountId: number | undefined | null;
+  productSaleAccount: string | undefined | null;
+  productRawMaterial: boolean | undefined | null;
+  productPhoto: string | undefined | null;
+  productFile: string | undefined | null;
+  productState: boolean | undefined | null;
+  supplierList: ProveedorProductoType[];
+  warehouseList: ProductoByBodegaType[];
+  categoryList: CategoriaClientePvpType[];
+  bitacoraList?: BitacoraType[];
+  productCreationDate?: Date | undefined | null;
+  productModificationDate?: Date | undefined | null;
+  isProduction: boolean;
+  taxRateId: number;
+};
+
+export type ProductoRecetaType = {
+  productId: number;
+  groupId: number;
+  productCode: string;
+  productName: string;
+  measurementUnitId: number;
+  measurementUnitName: string;
+  measurementUnitType: string;
+  currentAverageCost: number;
+};
+
+export type ProductMiniDataType = {
+  productId: number;
+  productCode: string;
+  productName: string;
+  productGroupId: number;
+  productSubGroupId: number;
+  isRawMaterial: boolean;
+  costAccountId: number;
+  inventoryAccountId: number;
+  saleAccountId: number;
+  productCost: number;
+  productPvp: number;
+  taxRateId: number;
+};

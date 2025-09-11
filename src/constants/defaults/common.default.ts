@@ -1,0 +1,218 @@
+import {
+  ContractModeType,
+  ContractType,
+  ContractualInformationType,
+  DepartmentType,
+  EmployeeResumeType,
+  FichaEmpleadoType,
+  PaginatedResponseType,
+  PersonProviderType,
+  PositionType,
+  SucursalType,
+  TipoAdquisicionType,
+  UserType,
+} from '@/types';
+
+export const defaultPerson: EmployeeResumeType = {
+  employeeId: null,
+  personIdentification: '',
+  personName: '',
+  personCellphone: '',
+  personEmail: '',
+  imgUser: '',
+  positionName: '',
+  nameBranch: '',
+  employeeSalary: 0,
+  employeeEntryDate: '',
+  employeeReentryDate: '',
+  status: false,
+};
+
+export const defaultFichaEmpleado: FichaEmpleadoType = {
+  bankAccount: [],
+  bloodTypeId: 0,
+  bloodTypeName: '',
+  branchId: null,
+  cityName: '',
+  cvEmployee: null,
+  disabilityId: null,
+  disabilityName: '',
+  disabilityPercentage: 0,
+  driveLicenceEmployee: null,
+  driverLicenseExpirationDate: null,
+  drivingLicenseTypeDescription: '',
+  drivingLicenseTypeId: 0,
+  drivingLicenseTypeName: '',
+  educationLevelId: null,
+  educationLevelName: '',
+  emergencyContact: [],
+  employeeCellphone: null,
+  employeeDisabled: false,
+  employeeId: null,
+  employeePhone: null,
+  employeeTitle: '',
+  familyResponsibilities: [],
+  genderId: null,
+  genderName: '',
+  identificationDocCopy: null,
+  maritalStatusId: null,
+  maritalStatusName: '',
+  parishId: null,
+  parishName: '',
+  personAddress: '',
+  personBirthDate: null,
+  personCellphone: '',
+  personEmail: '',
+  personId: null,
+  personIdentification: '',
+  personName: '',
+  personResidenceSector: '',
+  positionId: null,
+  provinceName: '',
+  img: '',
+};
+
+export const defaultContractualInformation: ContractualInformationType = {
+  accumulatedFourteenth: false,
+  accumulatedThirteenth: false,
+  accumulatedReserveFundsEmployee: false,
+  branchId: null,
+  branchName: '',
+  companyEntryDate: null,
+  departmentId: null,
+  departmentName: '',
+  departureDate: null,
+  departureReason: '',
+  employeeReentryDate: null,
+  employeeSalary: 0,
+  employerIESS: false,
+  employerPatronalIESS: false,
+  fortnight: false,
+  fortnightValue: 0,
+  incomeTax: 0,
+  jobName: '',
+  listContract: [],
+  positionId: null,
+  reentryReason: '',
+  vacationProvision: false,
+};
+
+export const defaultPositionType: PositionType = {
+  positionId: null,
+  departmentId: null,
+  positionName: '',
+  positionState: false,
+};
+
+export const defaultSucursalType: SucursalType = {
+  address: '',
+  branchCategoryId: '',
+  branchId: null,
+  cellphone: '',
+  cityId: null,
+  email: '',
+  email2: '',
+  isOutlet: false,
+  nemonic: '',
+  name: 'TODAS LAS SUCURSALES',
+  phone: '',
+  phone2: '',
+  regionId: null,
+  responsible: '',
+  state: true,
+  thermalPrinting: false,
+  branchCode: '',
+};
+
+export const defaultDepartmentType: DepartmentType = {
+  departmentId: null,
+  departmentName: '',
+  departmentStatus: false,
+  areaGroupId: 0,
+};
+
+export const defaultContractModeType: ContractModeType = {
+  contractTypeId: null,
+  contractTypeName: '',
+};
+
+export const defaultContractType: ContractType = {
+  contractHours: 0,
+  contractId: null,
+  contractModalityId: null,
+  contractName: 'NUEVO CONTRATO - EDITARLO',
+  contractTypeId: null,
+  endDateContract: null,
+  fileContract: null,
+  nameContractType: '',
+  startDateContract: null,
+  stateContract: true,
+};
+
+export const defaultPaginatedResponse: PaginatedResponseType = {
+  limit: 0,
+  list: [],
+  page: 0,
+  totalPages: 0,
+  totalRecords: 0,
+};
+
+export const defaultTypeAdquisicion: TipoAdquisicionType[] = [
+  {
+    requestTypeId: 1,
+    requestTypeRoleId: 1,
+    requestTypeBranchId: 1,
+    requestTypeName: 'Default',
+    requestTypeState: true,
+  },
+  {
+    requestTypeId: 2,
+    requestTypeRoleId: 1,
+    requestTypeBranchId: 1,
+    requestTypeName: 'Default',
+    requestTypeState: true,
+  },
+  {
+    requestTypeId: 3,
+    requestTypeRoleId: 1,
+    requestTypeBranchId: 1,
+    requestTypeName: 'Default',
+    requestTypeState: true,
+  },
+  {
+    requestTypeId: 4,
+    requestTypeRoleId: 1,
+    requestTypeBranchId: 1,
+    requestTypeName: 'Default',
+    requestTypeState: true,
+  },
+];
+
+export const defaultUserType: UserType = {
+  userId: null,
+  branchId: null,
+  personId: null,
+  nick: '',
+  password: '',
+  position: null,
+  entryDate: null,
+  deactivationDate: null,
+  startTime: null,
+  endTime: null,
+  time: null,
+  cashId: null,
+  unlockCode: null,
+  photo: null,
+  state: false,
+};
+
+export const defaultPersonSupplierType: PersonProviderType = {
+  personId: null,
+  personIdentification: '',
+  providerName: 'TODOS LOS PROVEEDORES',
+  providerId: null,
+  personName: 'TODOS LOS PROVEEDORES',
+  personEmail: '',
+  personAddress: '',
+  personPhone: '',
+};

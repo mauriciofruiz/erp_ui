@@ -1,0 +1,12 @@
+export enum ProveedorEnum {
+    RUC = '01',
+    CEDULA = '02',
+    PASAPORTE_IDENTIFICACION_EXT = '03',
+    CONTADO = 1,
+    CREDITO = 2,
+    PROVEEDORES_NACIONALES = '2.01.01.01.001',
+    PROVEEDORES_EXTERIOR = '2.01.01.01.003',
+    BIENES = 1,
+    SERVICIOS = 2,
+    ECUADOR = 593,
+}

@@ -1,0 +1,1 @@
+export { FormasPagoPage } from './FormasPagoPage';

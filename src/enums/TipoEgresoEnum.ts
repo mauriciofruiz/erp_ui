@@ -1,0 +1,5 @@
+export enum TipoEgresoEnum {
+  REPOS_CAJA_CHICA = 1,
+  OTROS_EGRESOS = 2,
+  ANTICIPO_ESTIBAJE_CONTENEDOR = 3,
+}

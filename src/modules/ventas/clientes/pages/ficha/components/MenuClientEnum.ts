@@ -1,0 +1,11 @@
+export enum MenuClientEnum {
+    INFORMACION_COMERCIAL = 0,
+    CREDITO = 1,
+    ALERTAS = 2,
+    IMPUESTOS = 3,
+    CONTABILIDAD = 4,
+    ESTADO_DE_CUENTA = 5,
+    EXCEPCIONES = 6,
+    GESTION_DE_DOCUMENTOS = 7,
+    HISTORIAL = 8,
+}

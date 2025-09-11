@@ -1,0 +1,1 @@
+export { SucursalPage } from './SucursalPage';

@@ -1,0 +1,48 @@
+import { GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarFilterButton } from "@mui/x-data-grid";
+
+export function CustomToolbarKardex() {
+
+    return (
+        <>
+            <GridToolbarContainer
+                style={{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    alignItems: 'center',
+                    marginRight: '10px',
+                }}
+            >
+                <GridToolbarColumnsButton
+                    sx={{
+                        mb: 2,
+                        mt: 1,
+                        marginLeft: '10px',
+                        mr: 1,
+                        width: '100px',
+                        backgroundColor: 'transparent',
+                    }}
+                />
+                <GridToolbarFilterButton
+                    sx={{
+                        mb: 2,
+                        mt: 1,
+                        marginLeft: '10px',
+                        mr: 1,
+                        width: '100px',
+                        backgroundColor: 'transparent',
+                    }}
+                />
+                <GridToolbarDensitySelector
+                    sx={{
+                        mb: 2,
+                        mt: 1,
+                        marginLeft: '10px',
+                        mr: 1,
+                        width: '100px',
+                        backgroundColor: 'transparent',
+                    }}
+                />
+            </GridToolbarContainer>
+        </>
+    );
+}

@@ -1,0 +1,60 @@
+export type PersonType = {
+  personId: number;
+  contributorTypeId: string;
+  countryId: number;
+  parishId: number;
+  maritalStatusId: number;
+  genderId: number;
+  taxIdentificationId: number;
+  personIdentification: string;
+  personName: string;
+  personBirthDate: Date | null;
+  personAddress: string;
+  personCellphone: string;
+  personPhone: string;
+  personEmail: string;
+  isClient: boolean;
+  isEmployee: boolean;
+  isSupplier: boolean;
+  personRegistrationDate: Date | null;
+  personResidenceNeighborhood: string;
+  personResidenceCity: string;
+  personResidenceParish: string;
+  personResidenceSector: string;
+};
+
+export type PersonProviderType = {
+  personAddress: string;
+  personEmail: string;
+  personId: number | null;
+  personIdentification: string;
+  personName: string;
+  personPhone: string;
+  providerId: number | null;
+  providerName: string;
+  retentionSourceId?: number | null;
+  retentionIVAId?: number | null;
+  creditDays?: number | null;
+  paymentConditionId?: number;
+  expenseAccountId?: number;
+  isForeign?: boolean;
+};
+
+export type PersonClientType = {
+  personId?: number | null;
+  clientId?: number | null;
+  personIdentification: string;
+  personName: string;
+  clientName: string;
+  personEmail: string;
+  authorizedQuota?: number | null;
+  usedQuota?: number | null;
+  overdraft?: number | null;
+  availableQuota?: number | null;
+  clientCategory: string;
+  clientContact: string;
+  personPhone: string;
+  creditDays?: number | null;
+  creditObservation: string;
+  taxIdentificationCode: string;
+};

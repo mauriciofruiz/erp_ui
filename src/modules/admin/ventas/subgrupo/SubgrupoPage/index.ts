@@ -1,0 +1,1 @@
+export { SubgrupoPage } from './SubgrupoPage';

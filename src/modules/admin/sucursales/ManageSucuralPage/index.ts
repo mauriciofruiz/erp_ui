@@ -1,0 +1,1 @@
+export { ManageSucuralPage } from './ManageSucuralPage';

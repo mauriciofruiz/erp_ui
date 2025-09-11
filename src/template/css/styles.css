@@ -1,0 +1,159 @@
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #c2c9d2;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.button-sidebar {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    z-index: 3;
+}
+
+.button-sidebar-return {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 80px;
+    left: -45px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.button-sidebar-logout {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 142px;
+    left: -49px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.centered-div {
+    display: grid;
+    place-items: center;
+}
+
+.topbar {
+    position: absolute;
+    width: 100vw;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 63px;
+}
+
+.mi-input-number .ant-input-number-input {
+    text-align: right;
+    color: white;
+}
+
+.mi-input-number-generic .ant-input-number-input {
+    text-align: right;
+    color: white;
+}
+
+.autocomplete-width .MuiAutocomplete-paper {
+    min-width: 200px;
+}
+
+kbd {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 100%;
+    font-family: monospace, sans-serif;
+    vertical-align: baseline;
+    background: transparent;
+    border-color: #e6e6e6 #bebebe #bebebe #e6e6e6;
+    border-style: solid;
+    border-width: 1px 3px 4px;
+    padding: 0 5px;
+    background-color: #d2d2d2;
+    background-color: rgba(210, 210, 210, 0.9);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+kbd.menu {
+    -moz-border-radius: 3px;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+    -webkit-border-radius: 3px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+    color: #333;
+    display: inline-block;
+    font-family: monospace, sans-serif;
+    font-size: 100%;
+    line-height: 1.4;
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.desktop {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 2% 5% 5% 5%;
+    flex-direction: column;
+}
+
+.desktop .paper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    margin: 5px;
+    /* adjust as per your requirements */
+}
+
+.desktop .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #000;
+    padding-top: 5%;
+}
+
+.desktop .search {
+    width: 100%;
+    margin-bottom: 2px;
+}

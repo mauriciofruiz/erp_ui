@@ -1,0 +1,1 @@
+export { ManageCajaRecaudadorasPage } from './ManageCajaRecaudadorasPage';

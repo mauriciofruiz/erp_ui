@@ -1,0 +1,1 @@
+export { CategoriaClientesPage } from './CategoriaClientesPage';

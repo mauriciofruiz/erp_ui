@@ -1,0 +1,1 @@
+export { CajasRecaudadorasPage } from './CajasRecaudadorasPage';

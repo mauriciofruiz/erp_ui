@@ -1,0 +1,1 @@
+export { ManageNotaCreditoPage } from './ManageNotaCreditoPage';

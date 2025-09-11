@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "front",
+			"path": "."
+		}
+	],
+	"settings": {
+		"exportall.config.relExclusion": [
+			"/src/modules/inventario/pages/index.ts",
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion/AccordionOtrosGastos.tsx",
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion/DetalleLiquidacion.tsx",
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion/FooterLiquidacion.tsx",
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion/LiquidacionForm.tsx"
+		],
+		"exportall.config.folderListener": [
+			"/src/modules/importaciones/comprasexterior/costos/pages/liquidacion"
+		]
+	}
+}

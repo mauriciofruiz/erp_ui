@@ -1,0 +1,10 @@
+export enum ModuloEnum {
+  ADQUISICION = 1,
+  ALMACENAMIENTO = 2,
+  VENTAS = 3,
+  BANCOS = 4,
+  TALENTO_HUMANO = 5,
+  CONTABILIDAD_FINANZAS = 6,
+  PRODUCCION = 7,
+  COMERCIAL = 8,
+}
