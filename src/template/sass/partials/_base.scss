@@ -1,32 +1,22 @@
 @import "../modules/all";
 
 body {	
-	background: url(../img/bg.jpg);
-	-webkit-background-size: cover;
-	background-size: cover;
+	background: transparent;
 	font-family: 'Source Sans Pro', sans-serif;
 	color:$text;
 	font-weight: 300;
 
 	&.bg1 {	
-		background: url(../img/bg.jpg); 
-		-webkit-background-size: cover;
-		background-size: cover;
+		background: transparent; 
 	}
 	&.bg2 {	
-		background: url(../img/bg2.jpg); 
-		-webkit-background-size: cover;
-		background-size: cover;
+		background: transparent; 
 	}
 	&.bg3 {	
-		background: url(../img/bg3.jpg); 
-		-webkit-background-size: cover;
-		background-size: cover;
+		background: transparent; 
 	}
 	&.bg4 {	
-		background: url(../img/bg4.jpg); 
-		-webkit-background-size: cover;
-		background-size: cover;
+		background: transparent; 
 	}
 }
 

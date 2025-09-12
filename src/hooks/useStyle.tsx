@@ -1,4 +1,3 @@
-import { contrastText } from '@/ui/layout/Theme/ThemeParameters';
 import { Button, IconButton, Paper, TableCell } from '@mui/material';
 import { createTheme, styled, Theme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
@@ -9,19 +8,19 @@ import { MaterialDesignContent } from 'notistack';
 export const StyledMaterialDesignContent = styled(MaterialDesignContent)(
   () => ({
     '&.notistack-MuiContent-success': {
-      color: contrastText,
+      color: '#ffffff',
       fontWeight: 'bold',
     },
     '&.notistack-MuiContent-error': {
-      color: contrastText,
+      color: '#ffffff',
       fontWeight: 'bold',
     },
     '&.notistack-MuiContent-warning': {
-      color: contrastText,
+      color: '#ffffff',
       fontWeight: 'bold',
     },
     '&.notistack-MuiContent-info': {
-      color: contrastText,
+      color: '#ffffff',
       fontWeight: 'bold',
     },
   })

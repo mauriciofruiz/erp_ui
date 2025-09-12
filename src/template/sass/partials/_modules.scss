@@ -19,7 +19,7 @@
   padding: 0.4em 0.55em;
   display: inline-block;
   position: relative;
-  color:white;
+  color: #475569;
   transition: background-color 250ms, border 250ms;
 
   &.fixed {
@@ -31,7 +31,7 @@
   &.active{
     background-color: rgba(255,255,255,.25);
      border:1px solid transparent;
-     color:white;
+     color: #475569;
   }
 
   &.no-circle {
@@ -102,7 +102,7 @@
 a.btn-circle:hover, button.btn-circle:hover {
   background-color: rgba(255,255,255,.25);
   border:1px solid transparent;
-  color:white;
+  color: #475569;
 }
 
 
@@ -246,7 +246,7 @@ a.btn-circle:hover, button.btn-circle:hover {
   }
   
   &:hover, &:focus { 
-    color:white; 
+    color: #475569; 
     outline: none;
   }
 
@@ -293,7 +293,7 @@ a.btn-circle:hover, button.btn-circle:hover {
       color:#000;
     }
     &.inverse:hover {
-      color:white;
+      color: #475569;
     }
   }
 
@@ -320,7 +320,7 @@ a.btn-circle:hover, button.btn-circle:hover {
     text-align: center;
     transform: translateY(-50%);
     .dropdown.open & i { transform: rotate(180deg); }
-    i { color:white; }
+    i { color: #475569; }
   }
 
 } // btn
@@ -364,7 +364,7 @@ a.btn-circle:hover, button.btn-circle:hover {
     opacity: 1;
   }
   &>li>a {
-    color:white;
+    color: #475569;
     font-weight: 100;
     padding: 12px 20px;
     position: relative;
@@ -449,7 +449,7 @@ a.btn-circle:hover, button.btn-circle:hover {
   position: relative;
   border-radius: 0;
   border:0;
-  background-color: rgba(0,0,0,0.4);
+  background-color: transparent;
   padding: 40px 30px;
   margin: 0;
   margin-top: 1px;
@@ -547,11 +547,11 @@ a.btn-circle:hover, button.btn-circle:hover {
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th,
 .table-striped>thead>tr>th {
-  background-color: rgba(0,0,0,0.25);
+  background-color: transparent;
 }
 .table-striped>tbody>tr:nth-child(even)>td, 
 .table-striped>tbody>tr:nth-child(even)>th {
-  background-color: rgba(0,0,0,0.4);
+  background-color: transparent;
 }
 .table>thead>tr>th, .table>tbody>tr>th, 
 .table>tfoot>tr>th, .table>thead>tr>td, 
@@ -661,7 +661,7 @@ a.btn-circle:hover, button.btn-circle:hover {
   cursor: pointer;
   border-radius: 30px;
   transition: background 250ms 100ms;
-  background-color: rgba(0,0,0,0.4);
+  background-color: transparent;
   backface-visibility: hidden;
   &.switch--dark { background-color: #323232; }
   .widget__content & {  margin: 9px 10px;  }
@@ -871,7 +871,7 @@ input:checked + .swtc::before {
   right: auto;
   left: 14px;
   content:'on';
-  color:white;
+  color: #475569;
 }
 input:checked + .swtc.swtc--header::before {
   content:'Off';
@@ -939,7 +939,7 @@ input:checked + .swtc2::before {
       width: 12px;
       height: 12px;
       border-radius:50%;
-      background-color: rgba(0,0,0,0.4);
+      background-color: transparent;
       transition: background-color .3s;
     }
   }
@@ -1037,7 +1037,7 @@ input:checked + .swtc2::before {
 .loader-medium { font-size: 32px; }
 .loader-large { font-size: 64px; }
 .loader-xtralarge { font-size: 128px; }
-.loader-light { color: #fff; }
+.loader-light { color: #475569; }
 .loader-dark  { color: #333; }
 
 @each $color in $colors {
@@ -1080,7 +1080,7 @@ input:checked + .swtc2::before {
 .slider {
   margin: 37px 40px 35px;
   height: 2px;
-  background: rgba(0,0,0,0.4);
+  background: transparent;
   border:none;
   position: relative;
   &:before, &:after  {
@@ -1088,7 +1088,7 @@ input:checked + .swtc2::before {
     position: absolute;
     width: 1px;
     height: 10px;
-    background-color: rgba(0,0,0,0.4);
+    background-color: transparent;
     transition: background-color .3s;
     top: -4px;
   }
@@ -1158,7 +1158,7 @@ input:checked + .swtc2::before {
 .num-min, .num-max {
   position: absolute;
   top: -5px;
-  color:white;
+  color: #475569;
   font-weight: 100;
   font-size: 12px;
 }
@@ -1185,7 +1185,7 @@ input:checked + .swtc2::before {
 .progress {
   height: 2px;
   margin: 25px 40px 35px;
-  background-color: rgba(0,0,0,0.4);
+  background-color: transparent;
   position: relative;
   overflow: visible;
   &:before, &:after  {
@@ -1193,7 +1193,7 @@ input:checked + .swtc2::before {
     position: absolute;
     width: 1px;
     height: 10px;
-    background-color: rgba(0,0,0,0.4);
+    background-color: transparent;
     transition: background-color .3s;
     top: -4px;
   }
@@ -1317,7 +1317,7 @@ input:checked + .swtc2::before {
     margin: 1px 0 0 0;
     padding-left: 24px;
     font-weight: 100;
-    color:white;
+    color: #475569;
 
     &.stacked-input {
       width:calc(100% - 65px);
@@ -1362,20 +1362,20 @@ input:checked + .swtc2::before {
 
 .stacked-label {
     font-size: 20px;
-    color:white;
+    color: #475569;
     line-height: 64px;
     text-align: center;
     float: left;
     margin-right: 1px;
     margin-top: 1px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: transparent;
     text-decoration: none;
     width: 64px;
     height: 64px;
     cursor: pointer;
     transition: background-color 250ms;
     &:hover {
-      background-color: rgba(0,0,0,0.2);
+      background-color: transparent;
     }
 }
 
@@ -1396,7 +1396,7 @@ input:checked + .swtc2::before {
     margin-top: 1px;
     padding: 0 0 0 24px;
     font-weight: 100;
-    color:white;
+    color: #475569;
     text-align:left;
     font-size: 16px; 
     border-radius: 0;
@@ -1516,16 +1516,16 @@ input[name^="tab-radio"]{
 
 
 .modal-content {
-  background: url(../img/bg.jpg);
+  background: transparent;
   -webkit-background-size: 700% 700%;
   background-size: 700% 700%;
-  .bg1 & { background: url(../img/bg.jpg); }
-  .bg2 & { background: url(../img/bg2.jpg); }
-  .bg3 & { background: url(../img/bg3.jpg); }
-  .bg4 & { background: url(../img/bg4.jpg); }
+  .bg1 & { background: transparent; }
+  .bg2 & { background: transparent; }
+  .bg3 & { background: transparent; }
+  .bg4 & { background: transparent; }
   border-radius:0;
   border:0;
-  .close { color:white; }
+  .close { color: #475569; }
   .modal-title {
     color: rgba(255,255,255,.9);
     font-size: 22px;

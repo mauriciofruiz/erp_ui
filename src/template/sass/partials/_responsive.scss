@@ -222,18 +222,18 @@
 		margin-bottom: 0;
 		padding-bottom: 0;
 		transition: max-height .3s;
-		background: url(../img/bg.jpg);
+		background: transparent;
 		.bg1 & {	
-			background: url(../img/bg.jpg); 
+			background: transparent; 
 		}
 		.bg2 & {	
-			background: url(../img/bg2.jpg); 
+			background: transparent; 
 		}
 		.bg3 & {	
-			background: url(../img/bg3.jpg); 
+			background: transparent; 
 		}
 		.bg4 & {	
-			background: url(../img/bg4.jpg); 
+			background: transparent; 
 		}
 		-webkit-background-size: 700% 700%;
 		background-size: 700% 700%;
