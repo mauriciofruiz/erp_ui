@@ -1,4 +1,4 @@
-export const primaryColor = '#92C83E';
+export const primaryColor = '#7b2eff';
 export const primaryColorCompras = '#F86D9D';
 export const primaryColorContabilidad = '#5FCBF1';
 export const primaryColorTalento = '#F3AA5D';

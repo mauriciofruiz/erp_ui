@@ -10,12 +10,12 @@ function getServiceUrls() {
     };
   }
   return {
-    adquisicionServiceUrl: 'http://localhost:8081', //NO CAMBIAR
-    inventarioServiceUrl: 'http://localhost:8083', //NO CAMBIAR
-    contabilidadServiceUrl: 'http://localhost:8084', //NO CAMBIAR
-    tbaServiceUrl: 'http://localhost:8087', //NO CAMBIAR
+    adquisicionServiceUrl: 'http://localhost:8083', //NO CAMBIAR
+    inventarioServiceUrl: 'http://localhost:8085', //NO CAMBIAR
+    contabilidadServiceUrl: 'http://localhost:8081', //NO CAMBIAR
+    tbaServiceUrl: 'http://localhost:8080', //NO CAMBIAR
     reportesServiceUrl: 'http://localhost:8089', //NO CAMBIAR
-    ventasServiceUrl: 'http://localhost:8085', //NO CAMBIAR
+    ventasServiceUrl: 'http://localhost:8084', //NO CAMBIAR
   };
 }
 

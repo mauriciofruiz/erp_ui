@@ -5,7 +5,6 @@ export const FootBar = () => {
   return (
     <footer className="footer-brand">
       <img src={logoTransparente} height='65px' width='190px' style={{marginTop: '-30px'}} />
-      <p>© 2023 Sicon Suite ERP. Todos Los Derechos Reservados</p>
     </footer>
   );
 };
