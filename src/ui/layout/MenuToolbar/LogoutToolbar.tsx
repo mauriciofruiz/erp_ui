@@ -9,9 +9,10 @@ import {
   DialogContent,
   DialogTitle,
   Tooltip,
+  IconButton,
 } from '@mui/material';
 import { useLoginAsync } from '@/hooks';
-import { Info } from '@mui/icons-material';
+import { Info, Logout } from '@mui/icons-material';
 
 type LogoutToolbarProps = {
   // types...
@@ -40,60 +41,43 @@ const LogoutToolbar: React.FC<LogoutToolbarProps> = ({}) => {
         setIsOpen={setIsOpen}
         onLogout={onLogout}
       />
-      <main style={{ position: 'relative' }}>
-        <div>
-          <div
-            style={{
-              position: 'absolute',
-              top: '128px',
-              left: '-60px',
-              bottom: 0,
-              width: '100px',
-              backgroundColor: '#4f5052',
-              clipPath: 'circle(30px at 40px 40px)',
-            }}
-          />
-          <Tooltip title={'Cerrar sesión'}>
-            <motion.button
-              whileHover={{ scale: 1.4 }}
-              whileTap={{ scale: 0.9 }}
-              className="button-sidebar-logout"
+      <main style={{ 
+        position: 'fixed',
+        left: '10px',
+        top: '194px',
+        zIndex: 1001,
+      }}>
+        <Tooltip title={'Cerrar sesión'} placement="right">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <IconButton
               onClick={() => setIsOpen(true)}
+              sx={{
+                width: 50,
+                height: 50,
+                borderRadius: 2,
+                background: 'linear-gradient(45deg, #667eea, #764ba2)',
+                boxShadow: '0 4px 20px rgba(102, 126, 234, 0.3)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(10px)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #5a6fd8, #6a4190)',
+                  boxShadow: '0 6px 25px rgba(102, 126, 234, 0.4)',
+                  transform: 'translateY(-2px)',
+                },
+                '&:active': {
+                  transform: 'translateY(0px)',
+                },
+                transition: 'all 0.3s ease',
+              }}
             >
-              <svg
-                width="27"
-                height="27"
-                viewBox="0 0 23 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path
-                    d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15"
-                    strokeWidth="1.5"
-                    strokeLinejoin="round"
-                    fill="transparent"
-                    stroke="#ffffff"
-                    strokeLinecap="round"
-                  ></path>
-                  <path
-                    d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.3531 21.8897 19.1752 21.9862 17 21.9983M9.00195 17C9.01406 19.175 9.11051 20.3529 9.87889 21.1213C10.5202 21.7626 11.4467 21.9359 13 21.9827"
-                    strokeWidth="1.5"
-                    stroke="#ffffff"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </g>
-              </svg>
-            </motion.button>
-          </Tooltip>
-        </div>
+              <Logout sx={{ color: '#ffffff', fontSize: 20 }} />
+            </IconButton>
+          </motion.div>
+        </Tooltip>
       </main>
     </>
   );
@@ -110,20 +94,88 @@ const DialogConfirmation: React.FC<DialogConfirmationProps> = ({
       onClose={() => setIsOpen(false)}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
+      PaperProps={{
+        sx: {
+          borderRadius: 3,
+          background: 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+        },
+      }}
     >
-      <DialogTitle id="alert-dialog-title" sx={{ textAlign: 'center' }}>
+      <DialogTitle 
+        id="alert-dialog-title" 
+        sx={{ 
+          textAlign: 'center',
+          fontWeight: 600,
+          color: '#475569',
+          background: 'linear-gradient(45deg, #667eea, #764ba2)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
         {'Cierre De Sesión'}
       </DialogTitle>
       <DialogContent>
-        <Alert severity="warning" icon={<Info />}>
+        <Alert 
+          severity="warning" 
+          icon={<Info />}
+          sx={{
+            borderRadius: 2,
+            backgroundColor: 'rgba(255, 193, 7, 0.1)',
+            border: '1px solid rgba(255, 193, 7, 0.3)',
+            '& .MuiAlert-icon': {
+              color: '#f59e0b',
+            },
+            '& .MuiAlert-message': {
+              color: '#92400e',
+            },
+          }}
+        >
           {'¿Está seguro que desea cerrar sesión?'}
         </Alert>
       </DialogContent>
-      <DialogActions>
-        <Button onClick={() => setIsOpen(false)} color="primary">
+      <DialogActions sx={{ p: 3, gap: 1 }}>
+        <Button 
+          onClick={() => setIsOpen(false)} 
+          variant="outlined"
+          sx={{
+            borderRadius: 2,
+            textTransform: 'none',
+            fontWeight: 500,
+            borderColor: '#667eea',
+            color: '#667eea',
+            '&:hover': {
+              borderColor: '#5a6fd8',
+              backgroundColor: 'rgba(102, 126, 234, 0.1)',
+            },
+          }}
+        >
           Cancelar
         </Button>
-        <Button onClick={onLogout} color="primary" autoFocus>
+        <Button 
+          onClick={onLogout} 
+          variant="contained"
+          autoFocus
+          sx={{
+            borderRadius: 2,
+            textTransform: 'none',
+            fontWeight: 600,
+            background: 'linear-gradient(45deg, #667eea, #764ba2)',
+            boxShadow: '0 4px 20px rgba(102, 126, 234, 0.3)',
+            '&:hover': {
+              background: 'linear-gradient(45deg, #5a6fd8, #6a4190)',
+              boxShadow: '0 6px 25px rgba(102, 126, 234, 0.4)',
+              transform: 'translateY(-1px)',
+            },
+            '&:active': {
+              transform: 'translateY(0px)',
+            },
+            transition: 'all 0.3s ease',
+          }}
+        >
           Aceptar
         </Button>
       </DialogActions>

@@ -2,10 +2,9 @@ import React, { useMemo, useRef, useEffect, useState } from 'react';
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import { usericon } from '@/assets';
-import { Grid, IconButton, Typography } from '@mui/material';
+import { IconButton, Typography, Box, useTheme, useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { IconsMap } from '@/modules';
-import { useStyles } from '@/hooks';
 import { FootBar } from '../FootBar';
 import { MenuToggle } from './MenuToggle';
 import { useDimensions } from './useDimensions';
@@ -14,7 +13,7 @@ import { AppDispatch, RootState } from '@/store';
 import { MenuType } from '@/types';
 
 export type MenuToolbarProps = {
-  // types...
+  onMenuToggle?: (isOpen: boolean) => void;
 };
 
 const itemVariants = {
@@ -59,11 +58,13 @@ const sidebar = {
   },
 };
 
-const MenuToolbar: React.FC<MenuToolbarProps> = ({}) => {
+const MenuToolbar: React.FC<MenuToolbarProps> = ({ onMenuToggle }) => {
   const [isOpen, cycleOpen] = useCycle(false, true);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const { height } = useDimensions(containerRef);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const {
     user,
     activeMenu,
@@ -87,7 +88,6 @@ const MenuToolbar: React.FC<MenuToolbarProps> = ({}) => {
     return sucursales.find((sucursal) => sucursal.branchId === user?.branchId)
       ?.name;
   }, [sucursales, user]);
-  const styles = useStyles();
 
   const handleIconClick = (menu: MenuType) => {
     if (activeMenu) {
@@ -181,12 +181,26 @@ const MenuToolbar: React.FC<MenuToolbarProps> = ({}) => {
     };
   }, [isOpen, cycleOpen]);
 
+  // Notify parent component about menu state changes
+  useEffect(() => {
+    if (onMenuToggle) {
+      onMenuToggle(isOpen);
+    }
+  }, [isOpen, onMenuToggle]);
+
   return (
     <motion.main
       initial={{ width: '60px' }}
-      style={{ display: 'flex' }}
+      style={{ 
+        display: 'flex',
+        position: 'fixed',
+        left: 0,
+        top: '62px',
+        height: 'calc(100vh - 62px)',
+        zIndex: 1000,
+      }}
       animate={{
-        width: isOpen ? '260px' : '60px',
+        width: isOpen ? (isMobile ? '280px' : '280px') : '60px',
       }}
     >
       <AnimatePresence>
@@ -197,7 +211,12 @@ const MenuToolbar: React.FC<MenuToolbarProps> = ({}) => {
               width: 0,
               transition: { delay: 0.7, duration: 0.3 },
             }}
-            style={{ zIndex: 2, position: 'relative', marginTop: '62px' }}
+            style={{ 
+              zIndex: 2, 
+              position: 'relative',
+              height: '100%',
+              overflow: 'visible',
+            }}
           >
             <motion.div
               className="container"
@@ -205,94 +224,205 @@ const MenuToolbar: React.FC<MenuToolbarProps> = ({}) => {
               animate="open"
               exit="closed"
               variants={sideVariants}
-              style={{ width: '260px' }}
+              style={{ 
+                width: isMobile ? '280px' : '280px',
+                height: '100%',
+                padding: '20px',
+                overflowY: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
               ref={contentRef}
             >
               <div
-                className="user-info"
                 style={{
-                  marginLeft: '-6.5%',
-                  width: '260px',
+                  width: '100%',
+                  padding: '20px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: '0 0 16px 0',
+                  marginBottom: '20px',
                 }}
               >
-                <figure className="rounded-image profile__img">
-                  <img
-                    className="media-object"
-                    src={photo}
-                    alt="user"
-                    height={150}
-                    width={110}
-                    style={{ marginTop: '-20px' }}
-                  />
-                </figure>
-                <Grid container direction="column" justifyContent="center">
-                  <h2 className="user-info__name">{user?.userName}</h2>
-                  <h3 className="user-info__role" style={{ marginTop: '10px' }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 80,
+                      height: 80,
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      border: '3px solid rgba(255, 255, 255, 0.3)',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+                      mb: 2,
+                    }}
+                  >
+                    <img
+                      src={photo}
+                      alt="user"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: '#ffffff',
+                      fontWeight: 600,
+                      fontSize: '1.1rem',
+                      mb: 0.5,
+                      textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                    }}
+                  >
+                    {user?.userName}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: 'rgba(255, 255, 255, 0.9)',
+                      fontSize: '0.85rem',
+                      fontWeight: 500,
+                      mb: 0.5,
+                      textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                    }}
+                  >
                     {cargo}
-                  </h3>
-                  <h3 className="user-info__role">{sucursalUsuario}</h3>
-                </Grid>
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      fontSize: '0.75rem',
+                      fontWeight: 400,
+                      textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                    }}
+                  >
+                    {sucursalUsuario}
+                  </Typography>
+                </Box>
               </div>
-              <ul
-                className="main-nav"
-                style={{
-                  marginLeft: '-6.5%',
-                  width: '260px',
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flex: 1,
+                  width: '100%',
                 }}
               >
+                <Box
+                  component="ul"
+                  sx={{
+                    width: '100%',
+                    padding: 0,
+                    margin: 0,
+                    listStyle: 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
+                >
                 {menus?.map((menu) => (
-                  <motion.li
-                    whileHover={{ scale: 1.1 }}
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
                     variants={itemVariants}
                     key={menu.menuId}
-                    className={
-                      searchMenuLevel1(activeMenu)?.menuId === menu.menuId
-                        ? styles.navigateBarColor
-                        : selectedMenu === menu.menuId
-                        ? 'main-nav__link:hover'
-                        : ''
-                    }
-                    onMouseEnter={() => setSelectedMenu(menu.menuId)}
-                    onMouseLeave={() => setSelectedMenu(null)}
                     onClick={() => handleIconClick(menu)}
                     style={{
                       cursor: 'pointer',
                       userSelect: 'none',
                       display: 'flex',
-                      flexDirection: 'column',
+                      alignItems: 'center',
+                      padding: '12px 16px',
+                      borderRadius: '12px',
+                      background: searchMenuLevel1(activeMenu)?.menuId === menu.menuId
+                        ? 'rgba(255, 255, 255, 0.2)'
+                        : selectedMenu === menu.menuId
+                        ? 'rgba(255, 255, 255, 0.15)'
+                        : 'rgba(255, 255, 255, 0.05)',
+                      border: searchMenuLevel1(activeMenu)?.menuId === menu.menuId
+                        ? '1px solid rgba(255, 255, 255, 0.3)'
+                        : '1px solid rgba(255, 255, 255, 0.1)',
+                      backdropFilter: 'blur(10px)',
+                      boxShadow: searchMenuLevel1(activeMenu)?.menuId === menu.menuId
+                        ? '0 4px 20px rgba(255, 255, 255, 0.1)'
+                        : '0 2px 10px rgba(0, 0, 0, 0.1)',
+                      transition: 'all 0.3s ease',
                     }}
+                    onMouseEnter={() => setSelectedMenu(menu.menuId)}
+                    onMouseLeave={() => setSelectedMenu(null)}
                   >
-                    <Grid
-                      container
-                      alignItems="center"
-                      className="main-nav__link"
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 2,
+                        width: '100%',
+                      }}
                     >
-                      <Grid item sx={{ ml: 1 }}>
-                        <IconButton size="medium">
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: 40,
+                          height: 40,
+                          borderRadius: '10px',
+                          background: searchMenuLevel1(activeMenu)?.menuId === menu.menuId
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgba(255, 255, 255, 0.1)',
+                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                        }}
+                      >
+                        <IconButton 
+                          size="small"
+                          sx={{ 
+                            color: '#ffffff',
+                            '&:hover': {
+                              backgroundColor: 'transparent',
+                            },
+                          }}
+                        >
                           {IconsMap[menu.menuIcon]}
                         </IconButton>
-                      </Grid>
-                      <Grid item sx={{ ml: 1, mt: 1 }}>
-                        <Typography variant="subtitle1">
-                          {menu.menuName}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </motion.li>
+                      </Box>
+                      <Typography 
+                        variant="subtitle1"
+                        sx={{
+                          color: '#ffffff',
+                          fontWeight: searchMenuLevel1(activeMenu)?.menuId === menu.menuId ? 600 : 500,
+                          fontSize: '0.95rem',
+                          textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                          flex: 1,
+                        }}
+                      >
+                        {menu.menuName}
+                      </Typography>
+                    </Box>
+                  </motion.div>
                 ))}
-                <li>
-                  <div
-                    style={{
-                      position: 'relative',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                    }}
-                  >
-                    <FootBar />
-                  </div>
-                </li>
-              </ul>
+                </Box>
+                
+                {/* Footer positioned at the bottom */}
+                <Box
+                  sx={{
+                    marginTop: 'auto',
+                    paddingTop: 2,
+                    width: '100%',
+                  }}
+                >
+                  <FootBar />
+                </Box>
+              </Box>
             </motion.div>
           </motion.aside>
         )}
@@ -309,13 +439,25 @@ const MenuToolbar: React.FC<MenuToolbarProps> = ({}) => {
             top: 0,
             left: 0,
             bottom: 0,
-            width: '260px',
-            backgroundColor: '#4f5052',
+            width: isMobile ? '280px' : '280px',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 8px 32px rgba(102, 126, 234, 0.3)',
             zIndex: 1,
           }}
           variants={sidebar}
         />
-        <MenuToggle toggle={() => cycleOpen()} />
+        <Box
+          sx={{
+            position: 'fixed',
+            top: '74px',
+            left: '10px',
+            zIndex: 1002,
+          }}
+        >
+          <MenuToggle toggle={() => cycleOpen()} />
+        </Box>
       </motion.div>
     </motion.main>
   );
