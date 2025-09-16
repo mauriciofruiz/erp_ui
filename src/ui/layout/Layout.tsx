@@ -60,6 +60,7 @@ export const Layout = (props: any) => {
             px: 2,
             transition: 'all 0.3s ease-in-out', // Smooth transition
             minWidth: 0, // Prevent flex item from overflowing
+            background: 'transparent', // Explicitly set transparent background
           }}
         >
           <Container 
@@ -68,11 +69,12 @@ export const Layout = (props: any) => {
               maxWidth: getContentMaxWidth(),
               margin: 0,
               padding: 0,
+              background: 'transparent', // Explicitly set transparent background
             }}
           >
             <Box
               sx={{
-                background: 'rgba(255, 255, 255, 0.95)',
+                background: 'transparent', // Changed from rgba(255, 255, 255, 0.95) to transparent
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 borderRadius: 3,

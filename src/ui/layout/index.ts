@@ -1,3 +1,4 @@
+export * from './Desktop';
 export * from './DesktopLayout';
 export * from './FootBar';
 export * from './Layout';
