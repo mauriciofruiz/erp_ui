@@ -212,7 +212,7 @@ export const LoginPage = () => {
                               <IconButton
                                 onClick={handleTogglePasswordVisibility}
                                 edge="end"
-                                sx={{ color: '#667eea' }}
+                                sx={{ color: '#667eea', backgroundColor: 'transparent' }}
                               >
                                 {showPassword ? <VisibilityOff /> : <Visibility />}
                               </IconButton>
