@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { darken, lighten, styled } from '@mui/material/styles';
 import { DataGrid } from '@mui/x-data-grid';
 import Tooltip, { tooltipClasses, TooltipProps } from '@mui/material/Tooltip';
-import { tertearyColor } from '@/ui/layout/Theme/ThemeParameters';
+import {  whiteColor } from '@/ui/layout/Theme/ThemeParameters';
 
 const getBackgroundColor = (color: string, mode: string, proportion: number) =>
   mode === 'dark' ? darken(color, proportion) : lighten(color, proportion);
@@ -199,7 +199,7 @@ export const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
     },
   },
   '& .super-app-theme--header': {
-    backgroundColor: tertearyColor,
+    backgroundColor: whiteColor,
     color: theme.palette.primary.main,
   },
 }));

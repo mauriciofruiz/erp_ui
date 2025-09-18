@@ -7,6 +7,6 @@ export const primaryColorVentas = '#FFA300';
 export const primaryColorManufactura = '#C1A06B';
 export const contrastText = '#475569';
 export const secondaryColor = '#58595B';
-export const tertearyColor = '#ffffff';
+export const whiteColor = '#ffffff';
 export const backgroundColor = '#f8fafc';
 export const cardColor = 'rgba(255, 255, 255, 0.9)';

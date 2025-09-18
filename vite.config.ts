@@ -34,6 +34,18 @@ export default defineConfig(({ command }) => {
       server: {
         //host: '0.0.0.0', // Escuchar en todas las interfaces de red
         port: 5173, // El puerto que deseas utilizar
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+          'Pragma': 'no-cache',
+          'Expires': '0',
+          'Last-Modified': new Date().toUTCString()
+        },
+        fs: {
+          strict: false
+        },
+        hmr: {
+          overlay: true
+        }
       },
     };
   } else {
@@ -42,6 +54,11 @@ export default defineConfig(({ command }) => {
       server: {
         //host: '0.0.0.0', // Escuchar en todas las interfaces de red
         port: 5173, // El puerto que deseas utilizar
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
       },
     };
   }

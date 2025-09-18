@@ -1,4 +1,4 @@
-import { createTheme, darken, lighten, Theme } from '@mui/material/styles';
+import { createTheme, darken, lighten, Theme } from "@mui/material/styles";
 import {
   backgroundColor,
   cardColor,
@@ -10,15 +10,15 @@ import {
   primaryColorTalento,
   primaryColorVentas,
   secondaryColor,
-  tertearyColor,
-} from './ThemeParameters';
+  whiteColor,
+} from "./ThemeParameters";
 
 // * MODIFICACIONES PARA EL THEME GENERICO DE LA APLICACIÓN
 const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
   createTheme({
     typography: {
       fontSize: 12,
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: "Arial, sans-serif",
     },
     palette: {
       primary: {
@@ -35,50 +35,50 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
         paper: backgroundColor,
       },
       grey: {
-        400: '#545454',
+        400: "#545454",
       },
     },
     components: {
       MuiTable: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
       },
       MuiIconButton: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           sizeSmall: {
-            height: '30px',
-            width: '30px',
-            color: contrastText,
+            height: "30px",
+            width: "30px",
+            color: whiteColor,
             backgroundColor: primaryColor,
           },
           sizeMedium: {
-            color: primaryColor,
+            color: whiteColor,
           },
         },
       },
       MuiIcon: {
         styleOverrides: {
           root: {
-            height: '20px',
-            width: '20px',
+            height: "20px",
+            width: "20px",
           },
         },
       },
       MuiAutocomplete: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           clearIndicator: {
-            backgroundColor: 'transparent',
+            backgroundColor: "transparent",
             color: contrastText,
           },
           popupIndicator: {
-            backgroundColor: 'transparent',
+            backgroundColor: "transparent",
             color: contrastText,
           },
           paper: {
@@ -88,17 +88,17 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       },
       MuiNativeSelect: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
       },
       MuiFormControl: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
       },
       MuiOutlinedInput: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           root: {
@@ -108,7 +108,7 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       },
       MuiInputLabel: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           root: {
@@ -118,7 +118,7 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       },
       MuiSelect: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           icon: {
@@ -129,14 +129,14 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       MuiTableHead: {
         styleOverrides: {
           root: {
-            backgroundColor: tertearyColor,
-            '& .MuiTableCell-root': {
+            backgroundColor: whiteColor,
+            "& .MuiTableCell-root": {
               color: primaryColor,
-              textAlign: 'center',
-              '& .MuiTableSortLabel-root': {
+              textAlign: "center",
+              "& .MuiTableSortLabel-root": {
                 color: primaryColor,
-                textAlign: 'center',
-                '& .MuiSvgIcon-root': {
+                textAlign: "center",
+                "& .MuiSvgIcon-root": {
                   color: contrastText,
                 },
               },
@@ -148,9 +148,9 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
         styleOverrides: {
           root: {
             backgroundColor: backgroundColor,
-            '& .MuiTableCell-root': {
-              color: 'white !important',
-              textAlign: 'center',
+            "& .MuiTableCell-root": {
+              color: "white !important",
+              textAlign: "center",
             },
           },
         },
@@ -159,9 +159,9 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
         styleOverrides: {
           root: {
             backgroundColor: backgroundColor,
-            '& .MuiTableCell-root': {
+            "& .MuiTableCell-root": {
               color: contrastText,
-              textAlign: 'center',
+              textAlign: "center",
             },
           },
         },
@@ -169,26 +169,26 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       MuiTableCell: {
         styleOverrides: {
           root: {
-            height: '35px',
-            padding: '0px',
+            height: "35px",
+            padding: "0px",
           },
         },
       },
       MuiCard: {
         styleOverrides: {
           root: {
-            backdropFilter: 'blur(5px)',
+            backdropFilter: "blur(5px)",
             backgroundColor: cardColor,
             padding: theme.spacing(2),
-            height: 'auto',
+            height: "auto",
           },
         },
       },
       MuiCardHeader: {
         styleOverrides: {
           root: {
-            marginLeft: '1.5%',
-            width: '97%',
+            marginLeft: "1.5%",
+            width: "97%",
             padding: 12,
           },
         },
@@ -196,7 +196,7 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       MuiAccordionSummary: {
         styleOverrides: {
           root: {
-            backgroundColor: tertearyColor,
+            backgroundColor: whiteColor,
             color: contrastText,
           },
         },
@@ -211,16 +211,16 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       },
       MuiButton: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           root: {
             backgroundColor: primaryColor,
-            color: contrastText,
-            '&:hover': {
+            color: whiteColor,
+            "&:hover": {
               backgroundColor: lighten(primaryColor, 0.2), //'#83b437',
             },
-            '&:active': {
+            "&:active": {
               backgroundColor: darken(primaryColor, 0.2), //'#b2d877',
             },
           },
@@ -228,29 +228,29 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       },
       MuiTextField: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           root: {
-            '& label.Mui-focused': {
+            "& label.Mui-focused": {
               color: primaryColor, // Use the updated primary color
             },
-            '& .MuiInput-underline:after': {
+            "& .MuiInput-underline:after": {
               borderBottomColor: primaryColor, // Use the updated primary color
             },
-            '& .MuiOutlinedInput-root': {
-              '&:hover fieldset': {
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
                 borderColor: contrastText,
               },
-              '&.Mui-focused fieldset': {
+              "&.Mui-focused fieldset": {
                 borderColor: primaryColor, // Use the updated primary color
               },
             },
-            '& .MuiOutlinedInput-root-MuiSelect-root': {
-              '&:hover fieldset': {
+            "& .MuiOutlinedInput-root-MuiSelect-root": {
+              "&:hover fieldset": {
                 borderColor: contrastText,
               },
-              '&.Mui-focused fieldset': {
+              "&.Mui-focused fieldset": {
                 borderColor: primaryColor, // Use the updated primary color
               },
             },
@@ -291,24 +291,24 @@ const createCustomTheme = (primaryColor: string) => (theme: Theme) =>
       MuiPaper: {
         styleOverrides: {
           root: {
-            backgroundColor: tertearyColor,
+            backgroundColor: whiteColor,
             color: contrastText,
           },
         },
       },
       MuiChip: {
         defaultProps: {
-          size: 'small',
+          size: "small",
         },
         styleOverrides: {
           root: {
             backgroundColor: primaryColor,
             color: contrastText,
-            '&:hover': {
+            "&:hover": {
               backgroundColor: contrastText,
               color: lighten(primaryColor, 0.2),
             },
-            '&:active': {
+            "&:active": {
               backgroundColor: contrastText,
               color: darken(primaryColor, 0.2),
             },
